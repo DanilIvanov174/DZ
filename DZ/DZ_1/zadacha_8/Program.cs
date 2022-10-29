@@ -1,7 +1,7 @@
 ﻿Console.WriteLine("ВВедите число");
 int a = int.Parse(Console.ReadLine()!);
 int b = 2;
-if(a>0)
+if (a > 0)
 {
     while (b < a)
     {
