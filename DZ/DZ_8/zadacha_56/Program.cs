@@ -65,7 +65,7 @@ void PrintArray(int[,] array) // Функция вывода массива в �
 void SumLineElements(int[,] array)
 {
     int index = 0;
-    int sumLine = 0;
+    int sumLine = int.MaxValue;
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -73,13 +73,12 @@ void SumLineElements(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             temp += array[i, j];
-            if (temp > sumLine)
-            {
-                sumLine = temp;
-                index = i;
-            }
+        }
+        if (temp < sumLine)
+        {
+            sumLine = temp;
+            index = i;
         }
     }
     Console.WriteLine("Строка " + (index + 1) + " Сумма " + sumLine);
 }
-
